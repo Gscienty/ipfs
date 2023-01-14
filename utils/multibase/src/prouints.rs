@@ -1,6 +1,6 @@
 use std::slice::{from_raw_parts, from_raw_parts_mut};
 
-use crate::encoding_declare::Encoding;
+use crate::Encoding;
 
 pub(crate) struct ProuintsBlockEncoding {
     mse: bool,

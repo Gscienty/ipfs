@@ -138,15 +138,3 @@ pub fn multihash(hashtype: &str, input: &[u8]) -> Vec<u8> {
 
     output
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_fuck() {
-        let output = multihash("sha2-512", "hello world".as_bytes());
-
-        println!("{:?}", output);
-    }
-}

@@ -1,10 +1,6 @@
 use crate::BlockEncoding;
 use std::slice::{from_raw_parts, from_raw_parts_mut};
 
-pub trait Encoding {
-    fn encode(input: &[u8]) -> String;
-}
-
 pub(crate) fn inner_encode(blk: &BlockEncoding<char>, input: &[u8], output: &mut [char]) {
     let nblk = input.len() / blk.inblk_len;
     for grp in 0..nblk {

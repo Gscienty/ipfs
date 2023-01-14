@@ -11,15 +11,6 @@ use encoding_declare::*;
 pub use encoding::*;
 pub use prouints::Prouints;
 
-#[cfg(test)]
-mod tests {
-
-    use super::*;
-
-    #[test]
-    fn test_base4() {
-        let output = Prouints::encode(vec![127u8, 0, 0, 1].as_slice());
-
-        println!("{}, {}", output, output.as_bytes().len());
-    }
+pub trait Encoding {
+    fn encode(input: &[u8]) -> String;
 }
