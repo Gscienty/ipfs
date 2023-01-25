@@ -1,6 +1,8 @@
+use std::collections::HashMap;
+
 use crate::{
-    bigint::Bigint, block_encode::use_big_endian, encoding_declare, encoding_x_declare,
-    use_padding, BlockEncoding,
+    bigint::Bigint, encoding_declare, encoding_x_declare, use_big_endian, use_padding,
+    BlockEncoding,
 };
 
 encoding_declare!(Base2, prefix: '0' => "01", use_big_endian());
@@ -21,7 +23,7 @@ encoding_declare!(Base32Upper, prefix: 'B' => "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
 encoding_declare!(Base32Pad, prefix: 'c' => "abcdefghijklmnopqrstuvwxyz234567", use_big_endian(), use_padding('='));
 encoding_declare!(Base32PadUpper, prefix: 'C' => "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567", use_big_endian(), use_padding('='));
 
-encoding_declare!(Base32Z, prefix: 'z' => "ybndrfg8ejkmcpqxot1uwisza345h769", use_big_endian());
+encoding_declare!(Base32Z, prefix: 'h' => "ybndrfg8ejkmcpqxot1uwisza345h769", use_big_endian());
 
 encoding_x_declare!(Base36, prefix: 'k' => "0123456789abcdefghijklmnopqrstuvwxyz");
 encoding_x_declare!(Base36Upper, prefix: 'K' => "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
